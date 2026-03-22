@@ -17,7 +17,7 @@ The system is built using a decoupled architecture, ensuring that each component
 
    Composite: Powering the Query System. it allows nesting simple conditions into combined logical structures (AND/OR) for complex data filtering.
 
-## 3Behavioral Patterns
+### Behavioral Patterns
    Command: Every data operation (Insert, Update, Delete, Query) is encapsulated as an object, ensuring a consistent flow of Validation, Execution, and Result.
 
    Observer: Used for the Logging System. The database notifies registered observers whenever a data change occurs, allowing for extensible reactions.
@@ -27,8 +27,11 @@ The system is built using a decoupled architecture, ensuring that each component
 ## Key Features
 ### Fluent Table Definition: Clean and readable syntax for creating tables and schemas.
 
-## 3Dynamic Schema Validation: Strict type enforcement (String, Int, Bool) during all data operations.
+### 3Dynamic Schema Validation:
+Strict type enforcement (String, Int, Bool) during all data operations.
 
-## 3Complex Logical Queries: Support for deeply nested search conditions and logical operators.
+### 3Complex Logical Queries:
+Support for deeply nested search conditions and logical operators.
 
-## 3Decoupled Design: Every class follows the Single Responsibility Principle for maximum maintainability and testing.
+### 3Decoupled Design:
+Every class follows the Single Responsibility Principle for maximum maintainability and testing.
