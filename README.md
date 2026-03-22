@@ -1,33 +1,34 @@
-##MemDrive Engine -
-A robust, high-performance In-Memory Data Management System built from scratch using Advanced Design Patterns and Clean Code principles. This engine mimics core database functionalities including dynamic schema definition, CRUD operations, and a complex querying system.
+#InMemory Database Engine
+#Advanced Data Management System in C-Sharp
+This project is a high-performance In-Memory Data Engine developed with a focus on software architecture, clean code principles, and advanced design patterns. The system provides a robust framework for managing relational data structures entirely in memory, featuring a fluent API and a modular query system.
 
- #Architecture & Design Patterns
-The system is architected using 8 core design patterns to ensure scalability, maintainability, and decoupling.
+##Architecture and Design Patterns
+The system is built using a decoupled architecture, ensuring that each component has a single responsibility. To achieve this, the project implements 8 core design patterns:
 
- #Creational Patterns
-Builder Pattern: Used for the Table construction process. It provides a fluent API to define table names and add columns step-by-step before finalizing the object.
+###Creational Patterns
+   Singleton: The Database class is implemented as a Singleton, ensuring a single source of truth for all tables across the application.
 
-Singleton Pattern: Ensures there is only one instance of the Database manager across the application, providing a global point of access to tables.
+   Builder: Tables are defined through a step-by-step construction process, allowing for a readable and fluid schema definition.
 
-Prototype Pattern: Implemented for the Table Cloning requirement. It allows creating an independent deep copy of a table (schema and rows) without affecting the original data.
+   Prototype: Used for the Table Cloning feature, enabling the creation of deep, independent copies of existing tables and their rows.
 
-# Structural Patterns
-Facade Pattern: Provides a simplified DBClient interface. Users interact with a clean API (e.g., db.Insert, db.Query) while the complex logic remains hidden.
+###Structural Patterns
+   Facade: Provides a simplified DBClient interface, hiding the complexity of the internal engine and operations from the end-user.
 
-Composite Pattern: Powering the Query & Condition System. It allows building complex logical trees (AND/OR conditions) that can be evaluated as a single unit against data rows.
+   Composite: Powering the Query System. it allows nesting simple conditions into combined logical structures (AND/OR) for complex data filtering.
 
-# Behavioral Patterns
-Command Pattern: Every data operation (Insert, Update, Delete, Query) is encapsulated as a standalone object. This ensures a uniform execution structure: Validation -> Execution -> Result.
+##3Behavioral Patterns
+   Command: Every data operation (Insert, Update, Delete, Query) is encapsulated as an object, ensuring a consistent flow of Validation, Execution, and Result.
 
-Observer Pattern: Handles Change Reactions and Logging. The system automatically notifies registered loggers whenever a data mutation occurs.
+   Observer: Used for the Logging System. The database notifies registered observers whenever a data change occurs, allowing for extensible reactions.
 
-Iterator Pattern: (Optional/Implemented) Provides different strategies for traversing table rows, such as insertion order or sorted by specific columns.
+   Iterator: Provides multiple strategies for traversing table rows, supporting different sorting and filtering methods.
 
-# Key Features
-Dynamic Schema: Define tables with specific data types (String, Int, Bool).
+##Key Features
+###Fluent Table Definition: Clean and readable syntax for creating tables and schemas.
 
-Complex Queries: Support for nested conditions and logical operators.
+##3Dynamic Schema Validation: Strict type enforcement (String, Int, Bool) during all data operations.
 
-Data Integrity: Validation logic built into every operation.
+##3Complex Logical Queries: Support for deeply nested search conditions and logical operators.
 
-Independent Cloning: Full decoupled copies of datasets.
+##3Decoupled Design: Every class follows the Single Responsibility Principle for maximum maintainability and testing.
